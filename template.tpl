@@ -563,17 +563,12 @@ const initConsentMode = (data) => {
      * Add event listener to trigger update when consent changes
      *  'message'
      */
-    const onConsentCallbackFunc = function(ev) {
-        if (ev.data.message === CONSENT_MESSAGE_TYPE) {
-            log(ev.data.gcm);
-            if (ev.data.gcm && Object.keys(ev.data.gcm).length > 0) {
-                onUserConsent(ev.data.gcm);
-            }
-        }
+    const onConsentCallbackFunc = function(data) {
+        onUserConsent(data);
     };
 
     const callbackQueue = createQueue('__privaci_ccmp_callback_queue');
-    callbackQueue({type: CONSENT_MESSAGE_TYPE, callback: onConsentCallbackFunc});
+    callbackQueue({type: 'gcm_consent_given', callback: onConsentCallbackFunc});
 
 };
 
@@ -1028,6 +1023,6 @@ setup: ''
 
 ___NOTES___
 
-Created on 01/02/2024, 09:48:23
+Created on 05/02/2024, 09:44:52
 
 
