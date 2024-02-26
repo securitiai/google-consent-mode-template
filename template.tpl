@@ -50,374 +50,6 @@ ___TEMPLATE_PARAMETERS___
     "simpleValueType": true,
     "defaultValue": true,
     "help": "Enable Google Consent Mode Integration with Securiti"
-  },
-  {
-    "type": "GROUP",
-    "name": "defaultConsentState",
-    "displayName": "Default Consent Overrides",
-    "groupStyle": "NO_ZIPPY",
-    "subParams": [
-      {
-        "type": "SELECT",
-        "name": "ad_storage",
-        "displayName": "ad_storage",
-        "macrosInSelect": false,
-        "selectItems": [
-          {
-            "value": "denied",
-            "displayValue": "denied"
-          },
-          {
-            "value": "granted",
-            "displayValue": "granted"
-          }
-        ],
-        "simpleValueType": true,
-        "defaultValue": "denied",
-        "help": "Enables storage, such as cookies, related to advertising."
-      },
-      {
-        "type": "SELECT",
-        "name": "ad_user_data",
-        "displayName": "ad_user_data",
-        "macrosInSelect": false,
-        "selectItems": [
-          {
-            "value": "denied",
-            "displayValue": "denied"
-          },
-          {
-            "value": "granted",
-            "displayValue": "granted"
-          }
-        ],
-        "simpleValueType": true,
-        "defaultValue": "denied",
-        "help": "Sets consent for sending user data to Google for online advertising purposes."
-      },
-      {
-        "type": "SELECT",
-        "name": "ad_personalization",
-        "displayName": "ad_personalization",
-        "macrosInSelect": false,
-        "selectItems": [
-          {
-            "value": "denied",
-            "displayValue": "denied"
-          },
-          {
-            "value": "granted",
-            "displayValue": "granted"
-          }
-        ],
-        "simpleValueType": true,
-        "defaultValue": "denied",
-        "help": "Sets consent for personalized advertising."
-      },
-      {
-        "type": "SELECT",
-        "name": "analytics_storage",
-        "displayName": "analytics_storage",
-        "macrosInSelect": false,
-        "selectItems": [
-          {
-            "value": "denied",
-            "displayValue": "denied"
-          },
-          {
-            "value": "granted",
-            "displayValue": "granted"
-          }
-        ],
-        "simpleValueType": true,
-        "defaultValue": "denied",
-        "help": "Enables storage, such as cookies, related to analytics (for example, visit duration)."
-      },
-      {
-        "type": "SELECT",
-        "name": "functionality_storage",
-        "displayName": "functionality_storage",
-        "macrosInSelect": false,
-        "selectItems": [
-          {
-            "value": "denied",
-            "displayValue": "denied"
-          },
-          {
-            "value": "granted",
-            "displayValue": "granted"
-          }
-        ],
-        "simpleValueType": true,
-        "defaultValue": "denied",
-        "help": "Enables storage that supports the functionality of the website or app such as language settings."
-      },
-      {
-        "type": "SELECT",
-        "name": "personalization_storage",
-        "displayName": "personalization_storage",
-        "macrosInSelect": false,
-        "selectItems": [
-          {
-            "value": "denied",
-            "displayValue": "denied"
-          },
-          {
-            "value": "granted",
-            "displayValue": "granted"
-          }
-        ],
-        "simpleValueType": true,
-        "defaultValue": "denied",
-        "help": "Enables storage related to personalization such as video recommendations."
-      },
-      {
-        "type": "SELECT",
-        "name": "security_storage",
-        "displayName": "security_storage",
-        "macrosInSelect": false,
-        "selectItems": [
-          {
-            "value": "denied",
-            "displayValue": "denied"
-          },
-          {
-            "value": "granted",
-            "displayValue": "granted"
-          }
-        ],
-        "simpleValueType": true,
-        "defaultValue": "denied",
-        "help": "Enables storage related to security such as authentication functionality, fraud prevention, and other user protection"
-      }
-    ],
-    "enablingConditions": [
-      {
-        "paramName": "enableConsentMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "PARAM_TABLE",
-    "name": "defaultConsentStateByRegion",
-    "displayName": "Region-Specific Default Consent Overrides",
-    "paramTableColumns": [
-      {
-        "param": {
-          "type": "TEXT",
-          "name": "region",
-          "displayName": "Enter region codes, separated by commas.",
-          "simpleValueType": true,
-          "valueHint": "eg. in, us-ca, de",
-          "valueValidators": [
-            {
-              "type": "NON_EMPTY"
-            }
-          ],
-          "help": "eg. in, us-ca, de"
-        },
-        "isUnique": true
-      },
-      {
-        "param": {
-          "type": "SELECT",
-          "name": "ad_storage",
-          "displayName": "ad_storage",
-          "macrosInSelect": false,
-          "selectItems": [
-            {
-              "value": "denied",
-              "displayValue": "denied"
-            },
-            {
-              "value": "granted",
-              "displayValue": "granted"
-            },
-            {
-              "value": "Use global default",
-              "displayValue": "Use global default"
-            }
-          ],
-          "simpleValueType": true,
-          "help": "Enables storage, such as cookies, related to advertising.",
-          "defaultValue": "Use global default",
-          "valueValidators": [
-            {
-              "type": "NON_EMPTY"
-            }
-          ]
-        },
-        "isUnique": false
-      },
-      {
-        "param": {
-          "type": "SELECT",
-          "name": "ad_user_data",
-          "displayName": "ad_user_data",
-          "macrosInSelect": false,
-          "selectItems": [
-            {
-              "value": "denied",
-              "displayValue": "denied"
-            },
-            {
-              "value": "granted",
-              "displayValue": "granted"
-            },
-            {
-              "value": "Use global default",
-              "displayValue": "Use global default"
-            }
-          ],
-          "simpleValueType": true,
-          "help": "Sets consent for sending user data to Google for online advertising purposes.",
-          "defaultValue": "Use global default"
-        },
-        "isUnique": false
-      },
-      {
-        "param": {
-          "type": "SELECT",
-          "name": "ad_personalization",
-          "displayName": "ad_personalization",
-          "macrosInSelect": false,
-          "selectItems": [
-            {
-              "value": "denied",
-              "displayValue": "denied"
-            },
-            {
-              "value": "granted",
-              "displayValue": "granted"
-            },
-            {
-              "value": "Use global default",
-              "displayValue": "Use global default"
-            }
-          ],
-          "simpleValueType": true,
-          "help": "Sets consent for personalized advertising.",
-          "defaultValue": "Use global default"
-        },
-        "isUnique": false
-      },
-      {
-        "param": {
-          "type": "SELECT",
-          "name": "analytics_storage",
-          "displayName": "analytics_storage",
-          "macrosInSelect": false,
-          "selectItems": [
-            {
-              "value": "denied",
-              "displayValue": "denied"
-            },
-            {
-              "value": "granted",
-              "displayValue": "granted"
-            },
-            {
-              "value": "Use global default",
-              "displayValue": "Use global default"
-            }
-          ],
-          "simpleValueType": true,
-          "help": "Enables storage, such as cookies, related to analytics (for example, visit duration).",
-          "defaultValue": "Use global default"
-        },
-        "isUnique": false
-      },
-      {
-        "param": {
-          "type": "SELECT",
-          "name": "functionality_storage",
-          "displayName": "functionality_storage",
-          "macrosInSelect": false,
-          "selectItems": [
-            {
-              "value": "denied",
-              "displayValue": "denied"
-            },
-            {
-              "value": "granted",
-              "displayValue": "granted"
-            },
-            {
-              "value": "Use global default",
-              "displayValue": "Use global default"
-            }
-          ],
-          "simpleValueType": true,
-          "help": "Enables storage that supports the functionality of the website or app such as language settings.",
-          "defaultValue": "Use global default"
-        },
-        "isUnique": false
-      },
-      {
-        "param": {
-          "type": "SELECT",
-          "name": "personalization_storage",
-          "displayName": "personalization_storage",
-          "macrosInSelect": false,
-          "selectItems": [
-            {
-              "value": "denied",
-              "displayValue": "denied"
-            },
-            {
-              "value": "granted",
-              "displayValue": "granted"
-            },
-            {
-              "value": "Use global default",
-              "displayValue": "Use global default"
-            }
-          ],
-          "simpleValueType": true,
-          "help": "Enables storage related to personalization such as video recommendations.",
-          "defaultValue": "Use global default"
-        },
-        "isUnique": false
-      },
-      {
-        "param": {
-          "type": "SELECT",
-          "name": "security_storage",
-          "displayName": "security_storage",
-          "macrosInSelect": false,
-          "selectItems": [
-            {
-              "value": "denied",
-              "displayValue": "denied"
-            },
-            {
-              "value": "granted",
-              "displayValue": "granted"
-            },
-            {
-              "value": "Use global default",
-              "displayValue": "Use global default"
-            }
-          ],
-          "simpleValueType": true,
-          "defaultValue": "Use global default",
-          "help": "Enables storage related to security such as authentication functionality, fraud prevention, and other user protection"
-        },
-        "isUnique": false
-      }
-    ],
-    "newRowButtonText": "Add region-specific default",
-    "newRowTitle": "Add region-specific default",
-    "help": "If you would like to have different default consent rules per region, you can enter those defaults here. Any region that is not defined will automatically take the global default set in the \u0027defaultConsent\u0027 section.",
-    "enablingConditions": [
-      {
-        "paramName": "enableConsentMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
   }
 ]
 
@@ -433,7 +65,7 @@ const updateConsentState = require('updateConsentState');
 const getCookieValues = require('getCookieValues');
 const fromBase64 = require('fromBase64');
 const JSON = require('JSON');
-const createQueue = require('createQueue');
+const setInWindow = require('setInWindow');
 const Object = require('Object');
 const gtagSet = require('gtagSet');
 const COOKIE_NAME = '__privaci_cookie_consents';
@@ -481,11 +113,7 @@ const decodeCookie = (val) => {
     return {};
 };
 
-/*
- *   Called when consent changes. Assumes that consent object contains keys which
- *   directly correspond to Google consent types.
- */
-const onUserConsent = (consent) => {
+const onUserConsent = (consent, isDefault) => {
     if (!consent || typeof consent !== 'object') {
         return;
     }
@@ -500,9 +128,14 @@ const onUserConsent = (consent) => {
         }
     });
 
-    if (Object.keys(gcmConsent).length > 0) {
-        log('gcmConsent Set', gcmConsent);
-        updateConsentState(gcmConsent);
+    if (Object.keys(gcmConsent).length <= 0) return;
+
+    if (isDefault) {
+      log('gcm default cosent set', gcmConsent);
+      setDefaultConsentState(gcmConsent);
+    } else {
+      log('gcm user consent Set', gcmConsent);
+      updateConsentState(gcmConsent);
     }
 };
 
@@ -521,55 +154,15 @@ const initConsentMode = (data) => {
 
     gtagSet('developer_id.TODO', true);
 
-    // Set default consent state(s) - This come from GTM (not from CMP)
-    let defaultState = {"wait_for_update": 500};
-    Object.entries(data).forEach(pair => {
-        if (consentTypeNameMap[pair[0]] && (pair[1] === GCM_CONSENT_GRANTED || pair[1] === GCM_CONSENT_DENIED)) {
-            defaultState[pair[0]] = pair[1];
-        }
-    });
-    setDefaultConsentState(defaultState);
-    log('Done setting up Global defaults', defaultState);
-
-    // Set default consent state(s) By REGION - This come from GTM (not from CMP)
-    data.defaultConsentStateByRegion && data.defaultConsentStateByRegion.forEach(regionRecord => {
-        let geoCodes = parseRegionString(regionRecord.region);
-        let hasRegionOverride = false;
-        let regionalDefault = {
-            "wait_for_update": 500,
-            "region": geoCodes
-        };
-
-        Object.entries(regionRecord).forEach(e => {
-            if ((e[1] === GCM_CONSENT_GRANTED || e[1] === GCM_CONSENT_DENIED) && e[0] !== "region") {
-                regionalDefault[e[0]] = e[1];
-                hasRegionOverride = true;
-            }
-        });
-
-        if (hasRegionOverride) {
-          setDefaultConsentState(regionalDefault);
-          log('Done setting up Region defaults', regionalDefault);
-        }
-    });
+    if (!setInWindow('__privaci_gcm_set_consent', onUserConsent, true)) {
+      log('could not set __privaci_gcm_set_consent');
+    }
 
     // Check if cookie is set (by CMP) and has values that correspond to Google consent mode
     const gcmConsent = getGcmCookieValue(COOKIE_NAME);
     if (gcmConsent && typeof gcmConsent === 'object') {
-        onUserConsent(gcmConsent);
+        onUserConsent(gcmConsent, false);
     }
-
-    /**
-     * Add event listener to trigger update when consent changes
-     *  'message'
-     */
-    const onConsentCallbackFunc = function(data) {
-        onUserConsent(data);
-    };
-
-    const callbackQueue = createQueue('__privaci_ccmp_callback_queue');
-    callbackQueue({type: 'gcm_consent_given', callback: onConsentCallbackFunc});
-
 };
 
 if (data.enableConsentMode === true || data.enableConsentMode === 'true') {
@@ -592,7 +185,7 @@ ___WEB_PERMISSIONS___
           "key": "environments",
           "value": {
             "type": 1,
-            "string": "debug"
+            "string": "all"
           }
         }
       ]
@@ -637,7 +230,7 @@ ___WEB_PERMISSIONS___
                 "mapValue": [
                   {
                     "type": 1,
-                    "string": "__privaci_ccmp_callback_queue"
+                    "string": "__privaci_gcm_set_consent"
                   },
                   {
                     "type": 8,
@@ -649,7 +242,7 @@ ___WEB_PERMISSIONS___
                   },
                   {
                     "type": 8,
-                    "boolean": false
+                    "boolean": true
                   }
                 ]
               }
@@ -1023,6 +616,6 @@ setup: ''
 
 ___NOTES___
 
-Created on 05/02/2024, 09:44:52
+Created on 26/02/2024, 14:07:44
 
 
