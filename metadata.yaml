@@ -1,6 +1,6 @@
 homepage: "https://securiti.ai/"
 documentation: "https://securiti.ai/products/cookie-consent/"
 versions:
-  - sha: 7d17d315f40aa440546bd7e466533144a916b476
+  - sha: 6efb8d4d308b4bfbca65037d153a0ad14265825d
     changeNotes: |2
       Initial release.
