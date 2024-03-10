@@ -58,8 +58,6 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 // The first two lines are optional, use if you want to enable logging
 const log = require('logToConsole');
-log('data =', data);
-
 const setDefaultConsentState = require('setDefaultConsentState');
 const updateConsentState = require('updateConsentState');
 const getCookieValues = require('getCookieValues');
@@ -69,7 +67,6 @@ const setInWindow = require('setInWindow');
 const Object = require('Object');
 const gtagSet = require('gtagSet');
 const COOKIE_NAME = '__privaci_cookie_consents';
-const CONSENT_MESSAGE_TYPE = 'consent_given';
 const GCM_CONSENT_JSON_KEY = 'gcm';
 const GCM_CONSENT_GRANTED = 'granted';
 const GCM_CONSENT_DENIED = 'denied';
@@ -150,8 +147,6 @@ const parseRegionString = (regionCsv) => {
  *   update callback
  */
 const initConsentMode = (data) => {
-    log('Setting up Google Consent Mode defaults');
-
     gtagSet('developer_id.TODO', true);
 
     if (!setInWindow('__privaci_gcm_set_consent', onUserConsent, true)) {
@@ -185,7 +180,7 @@ ___WEB_PERMISSIONS___
           "key": "environments",
           "value": {
             "type": 1,
-            "string": "all"
+            "string": "debug"
           }
         }
       ]
@@ -304,26 +299,6 @@ ___WEB_PERMISSIONS___
               {
                 "type": 1,
                 "string": "__privaci_cookie_consents"
-              },
-              {
-                "type": 1,
-                "string": "__privaci_cookie_consent_generated"
-              },
-              {
-                "type": 1,
-                "string": "__privaci_cookie_consent_uuid"
-              },
-              {
-                "type": 1,
-                "string": "__privaci_latest_published_version"
-              },
-              {
-                "type": 1,
-                "string": "__privaci_cookie_no_action"
-              },
-              {
-                "type": 1,
-                "string": "__privaci_iab_tcf_version"
               }
             ]
           }
@@ -616,6 +591,6 @@ setup: ''
 
 ___NOTES___
 
-Created on 26/02/2024, 14:07:44
+Created on 10/03/2024, 10:05:10
 
 
