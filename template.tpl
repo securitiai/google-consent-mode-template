@@ -136,18 +136,12 @@ const onUserConsent = (consent, isDefault) => {
     }
 };
 
-const parseRegionString = (regionCsv) => {
-    return regionCsv.split(",")
-        .map(regCode => regCode.trim().toUpperCase())
-        .filter(regCode => regCode != "");
-};
-
 /*
  *   Executes the default command, sets the developer ID, and sets up the consent
  *   update callback
  */
 const initConsentMode = (data) => {
-    gtagSet('developer_id.TODO', true);
+    gtagSet('developer_id.dZmIzNT', true);
 
     if (!setInWindow('__privaci_gcm_set_consent', onUserConsent, true)) {
       log('could not set __privaci_gcm_set_consent');
@@ -265,7 +259,7 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "developer_id.TODO"
+                "string": "developer_id.dZmIzNT"
               }
             ]
           }
@@ -591,6 +585,6 @@ setup: ''
 
 ___NOTES___
 
-Created on 10/03/2024, 10:05:10
+Created on 12/03/2024, 12:20:00
 
 
